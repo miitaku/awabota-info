@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>awabota 相談フォーム</title>
+  <style>
+    body {
+      background-color: #eaf6fb;
+      font-family: "Helvetica", sans-serif;
+      margin: 0;
+      padding: 2em;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: #fff;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+    .title {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    .title span {
+      font-weight: bold;
+      font-size: 1.4em;
+      color: #1976d2;
+    }
+    label {
+      display: block;
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.7em;
+      margin-top: 0.3em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+    .checkbox-group {
+      margin-top: 0.5em;
+    }
+    .checkbox-group label {
+      font-weight: normal;
+      display: block;
+    }
+    button {
+      margin-top: 1.5em;
+      width: 100%;
+      padding: 1em;
+      font-size: 1em;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #155a9c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">📩 <span>awabota相談フォーム</span></div>
+
+    <form id="entryForm">
+      <label>お名前（フルネーム）：
+        <input type="text" name="name" required />
+      </label>
+
+      <label>メールアドレス：
+        <input type="email" name="email" required />
+      </label>
+
+      <label>お住まい（都道府県）：
+        <select name="address" required>
+          <option value="">選択してください</option>
+          <option value="北海道">北海道</option>
+          <option value="青森県">青森県</option>
+          <option value="岩手県">岩手県</option>
+          <option value="宮城県">宮城県</option>
+          <option value="秋田県">秋田県</option>
+          <option value="山形県">山形県</option>
+          <option value="福島県">福島県</option>
+          <option value="茨城県">茨城県</option>
+          <option value="栃木県">栃木県</option>
+          <option value="群馬県">群馬県</option>
+          <option value="埼玉県">埼玉県</option>
+          <option value="千葉県">千葉県</option>
+          <option value="東京都">東京都</option>
+          <option value="神奈川県">神奈川県</option>
+          <option value="新潟県">新潟県</option>
+          <option value="富山県">富山県</option>
+          <option value="石川県">石川県</option>
+          <option value="福井県">福井県</option>
+          <option value="山梨県">山梨県</option>
+          <option value="長野県">長野県</option>
+          <option value="岐阜県">岐阜県</option>
+          <option value="静岡県">静岡県</option>
+          <option value="愛知県">愛知県</option>
+          <option value="三重県">三重県</option>
+          <option value="滋賀県">滋賀県</option>
+          <option value="京都府">京都府</option>
+          <option value="大阪府">大阪府</option>
+          <option value="兵庫県">兵庫県</option>
+          <option value="奈良県">奈良県</option>
+          <option value="和歌山県">和歌山県</option>
+          <option value="鳥取県">鳥取県</option>
+          <option value="島根県">島根県</option>
+          <option value="岡山県">岡山県</option>
+          <option value="広島県">広島県</option>
+          <option value="山口県">山口県</option>
+          <option value="徳島県">徳島県</option>
+          <option value="香川県">香川県</option>
+          <option value="愛媛県">愛媛県</option>
+          <option value="高知県">高知県</option>
+          <option value="福岡県">福岡県</option>
+          <option value="佐賀県">佐賀県</option>
+          <option value="長崎県">長崎県</option>
+          <option value="熊本県">熊本県</option>
+          <option value="大分県">大分県</option>
+          <option value="宮崎県">宮崎県</option>
+          <option value="鹿児島県">鹿児島県</option>
+          <option value="沖縄県">沖縄県</option>
+        </select>
+      </label>
+
+      <label>年齢：
+        <select name="age" required>
+          <option value="">選択してください</option>
+          <option value="10代">10代</option>
+          <option value="20代">20代</option>
+          <option value="30代">30代</option>
+          <option value="40代">40代</option>
+          <option value="50代以上">50代以上</option>
+        </select>
+      </label>
+
+      <label>職業：
+        <input type="text" name="job" />
+      </label>
+
+      <label>興味のある内容（複数選択可）：</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="interest[]" value="AI構成について" /> AI構成について</label>
+        <label><input type="checkbox" name="interest[]" value="紹介報酬に興味" /> 紹介報酬に興味</label>
+        <label><input type="checkbox" name="interest[]" value="コンテンツ販売" /> コンテンツ販売</label>
+        <label><input type="checkbox" name="interest[]" value="Web3/NFT/DAO" /> Web3/NFT/DAO</label>
+        <label><input type="checkbox" name="interest[]" value="参加型コミュニティ" /> 参加型コミュニティ</label>
+        <label><input type="checkbox" name="interest[]" value="スタッフ制度" /> スタッフ制度</label>
+      </div>
+
+      <label>今のあなたの悩み・困っていること：
+        <textarea name="worry" rows="3"></textarea>
+      </label>
+
+      <input type="hidden" name="ref" id="refField" />
+      <button type="submit">送信</button>
+    </form>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get('ref');
+    if (ref) {
+      document.getElementById('refField').value = ref;
+    }
+
+    document.getElementById("entryForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const params = new URLSearchParams();
+
+      for (const [key, value] of formData.entries()) {
+        params.append(key, value);
+      }
+
+      fetch("https://script.google.com/macros/s/AKfycbzqLNavo6MRNaz8smsOw0xGYdAxY6FfTsd1qnx3emGjBzZVtjgZyL7R1jyh45707Tq8JA/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = "https://miitaku.github.io/invite.tool/thanks.html";
+        } else {
+          alert("送信に失敗しました。");
+        }
+      }).catch(error => {
+        alert("通信エラー：" + error);
+      });
+    });
+  </script>
+</body>
+</html>
